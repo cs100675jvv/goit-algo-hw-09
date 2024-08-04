@@ -1,7 +1,8 @@
 import time
 
+
+
 def find_coins_greedy(amount):
-    coins = [50, 25, 10, 5, 2, 1]
     result = {}
     
     for coin in coins:
@@ -13,7 +14,6 @@ def find_coins_greedy(amount):
     return result
 
 def find_min_coins(amount):
-    coins = [50, 25, 10, 5, 2, 1]
     dp = [float('inf')] * (amount + 1)
     dp[0] = 0
     coin_used = [0] * (amount + 1)
@@ -36,7 +36,8 @@ def find_min_coins(amount):
     return result
 
 # Example usage
-amount = 1139876
+coins = [10, 6, 1]
+amount = 1112
 
 # Timing the greedy algorithm
 start_time = time.time()
@@ -53,8 +54,3 @@ end_time = time.time()
 dp_time = end_time - start_time
 print("Dynamic programming result:", dp_result)
 print("Dynamic programming execution time: {:.16f} seconds".format(dp_time))
-
-# Comparison
-print("\nComparison:")
-print(f"Greedy algorithm: {greedy_result} (Time: {greedy_time:.16f} seconds)")
-print(f"Dynamic programming: {dp_result} (Time: {dp_time:.16f} seconds)")
